@@ -43,7 +43,7 @@ async def check_outputs(dut, exp, label=""):
 
 async def run_instr(dut, instr, cc, en, expected, label):
     """Helper to drive a specific valid instruction."""
-    dut.id.value = 0b110
+    dut.id.value = 0b111
     dut.instr_in.value = instr
     dut.cc_in.value = cc
     dut.instr_en.value = en
