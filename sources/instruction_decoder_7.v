@@ -1,4 +1,4 @@
-`timescale 1ns/1ps
+﻿`timescale 1ns/1ps
 module instruction_decoder_7(
     input wire [2:0] id,             
     input wire [4:0] instr_in,
@@ -22,7 +22,7 @@ module instruction_decoder_7(
 );
 always @(*) begin : instruction_decoder_7
     // --------------------------------------
-    // If ID != 111 → decoder is disabled
+    // If ID != 111 â†’ decoder is disabled
     // --------------------------------------
     if (id != 3'b111) begin
         rst         = 1'b0;
@@ -42,7 +42,7 @@ always @(*) begin : instruction_decoder_7
         stack_we    = 1'b0;
     end
     // --------------------------------------
-    // ID == 111 → normal decoder operation
+    // ID == 111 â†’ normal decoder operation
     // --------------------------------------
     else begin
         casex({instr_in, cc_in, instr_en})
