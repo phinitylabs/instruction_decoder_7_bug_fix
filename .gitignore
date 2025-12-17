@@ -1,0 +1,23 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Cocotb
+sim_build/
+*.vvp
+*.vcd
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
