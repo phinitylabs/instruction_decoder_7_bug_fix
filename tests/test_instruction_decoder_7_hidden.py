@@ -10,7 +10,7 @@ from cocotb_tools.runner import get_runner
 # ------------------------------------------------------------
 
 # The "Disabled" or "Default" output state as per RTL and Spec
-# (matches ID != 6 and case default)
+# (matches ID != 7 and case default)
 EXPECTED_DEFAULT = {
     "rst": 0, "out_ce": 0, "rsel": 0, "rce": 0, "cen": 0,
     "stack_re": 0, "pop": 0, "stack_we": 0,
@@ -58,14 +58,14 @@ async def run_instr(dut, instr, cc, en, expected, label):
 @cocotb.test()
 async def test_id_mismatch_sweep(dut):
     """
-    Verify that for any ID != 6 (0,1,2,3,4,5,7), the decoder is disabled
+    Verify that for any ID != 7 (0,1,2,3,4,5,6), the decoder is disabled
     regardless of the instruction inputs.
     """
     dut._log.info("Starting ID mismatch sweep...")
 
     for id_val in range(8):
-        # Skip the valid ID (6) as that is covered by instruction tests
-        if id_val == 6:
+        # Skip the valid ID (7) as that is covered by instruction tests
+        if id_val == 7:
             continue
 
         dut.id.value = id_val
